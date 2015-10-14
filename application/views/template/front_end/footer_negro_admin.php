@@ -35,45 +35,21 @@
 
 
 <!---->
-<script src="<?= base_url();?>assets/js/vendor/jquery-1.9.1.min.js"></script>
-
+<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-ui-1.11.1.js"></script>
+<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-ui.multidatespicker.js"></script>
 <script src="<?= base_url();?>assets/js/vendor/bootstrap.min.js"></script>
 <script src="<?= base_url();?>assets/js/main.js"></script>
 
 <!-- Required javascript files for Slider-->
 <script src="<?= base_url();?>assets/js/jquery.ba-cond.min.js"></script>
 <script src="<?= base_url();?>assets/js/jquery.slitslider.js"></script>
-
 <!-- /Required javascript files for Slider -->
 
 
-<!-- /SL Slider -->
+<script type="text/javascript">
 
-
-<!--End  JS<!--Begin  JS -->
-
-<!--
-<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-1.11.1.js"></script>
--->
-
-<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-2.1.1.js"></script>
-
-
-<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-ui-1.11.1.js"></script>
-<script type="text/javascript" src="<?= base_url();?>assets/js/jquery-ui.multidatespicker.js"></script>
-<script src="<?= base_url();?>assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
-<script>
-    $(function() {
-        $('#dias').multiDatesPicker();
-    });
-
-    $("#fechaDP").focus(function(){
-        var $this = $(this);
-
-        $this.multiDatesPicker();
-       // $this.multiDatesPicker("show");
-    });
+        $("[id*=fechaDP]").multiDatesPicker();
 
 //----------------Imagenes
       function getInfo(id){
@@ -83,18 +59,18 @@
             url: "imagenes/getinfo",
             type: "GET",
             dataType: "json",
-
             error: function(){
                console.log("Error");
             },
             success:function(data){
 
-                $("#titulo").val(data.data.titulo);
-                $("#descripcion").val(data.data.descripcion);
-                $("#restriccion").val(data.data.restriccion);
-                $("#ubi").val(data.data.ubicacion);
-                $("#info").val(data.data.info_extra);
-                $("#fechaDP").val(data.data.diaspromo);
+
+                $("[id^=titulo]").val(data.data.titulo);
+                $("[id^=descripcion]").val(data.data.descripcion);
+                $("[id^=restriccion]").val(data.data.restriccion);
+                $("[id^=ubi]").val(data.data.ubicacion);
+                $("[id^=info]").val(data.data.info_extra);
+                //$("[id^=fechaDP]").val(data.data.diaspromo);
             }
         })
 
@@ -140,6 +116,9 @@
         return false;
     });
 
+/*
+ http://www.maestrosdelweb.com/diez-funciones-imprescindibles-en-javascript/
+*/
 
 
 

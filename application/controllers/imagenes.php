@@ -2,7 +2,7 @@
 
 class Imagenes extends CI_Controller {
 
-    private $img = array();
+   private $img = array();
 
     public function __construct() {
         parent::__construct();

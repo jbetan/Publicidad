@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= base_url();?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url();?>assets/css/main.css">
     <link rel="stylesheet" href="<?= base_url();?>assets/css/sl-slide.css">
+    <link rel="stylesheet" href="<?= base_url();?>assets/css/south-street/jquery-ui.min.css">
 
 
     <!--End  CSS-->

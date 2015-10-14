@@ -104,7 +104,7 @@
                                         );
                                         $input_dias = array(
                                             'name' => 'dias',
-                                           // 'class' => 'input-block-level',
+                                           'class' => 'input-block-level',
                                             'placeholder' => 'Dias de promocion',
                                             'id' => 'fechaDP',
                                             'style'      => $estilo
