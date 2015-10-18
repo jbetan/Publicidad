@@ -50,7 +50,7 @@ $input_upload = array(
 
 
 $input_submit = array(
-    'value' => 'Enviar',
+    'value' => 'Guardar',
     'class' => 'btn btn-primary btn-large pull-right'
 );
 

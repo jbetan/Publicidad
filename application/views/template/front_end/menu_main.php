@@ -18,7 +18,6 @@
                     <li <?php if (strcmp($dia, 'viernes')   == 0) {?>class="active" <?php }?>><a href="<?=base_url()?>login/index/viernes">Viernes</a></li>
                     <li <?php if (strcmp($dia, 'sabado')    == 0) {?>class="active" <?php }?>><a href="<?=base_url()?>login/index/sabado">Sabado</a></li>
                     <li <?php if (strcmp($dia, 'domingo')   == 0) {?>class="active" <?php }?>><a href="<?=base_url()?>login/index/domingo">Domingo</a></li>
-
                     <li class="login">
                         <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
                     </li>

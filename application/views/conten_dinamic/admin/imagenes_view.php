@@ -1,8 +1,8 @@
-        <section id="portfolio" class="container main">
+        <section  class="container main">
             <div class="container">
                 <div class="center">
                     <div class="progress progress-warning">
-                        <div class="bar" style="width: 100%; text-align:center; font-size: 20px;"><?=@$nota?></div>
+                        <div class="bar" style=" <?=$css?> width: 100%; text-align:center; font-size: 20px;"><?=@$nota?></div>
                     </div>
                     <h3>Nuestras Imagenes</h3>
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores at blanditiis commodi consectetur cupiditate dicta, dignissimos ducimus esse hic id illum iste laboriosam molestiae repellendus sed ullam ut voluptatum.</p>
@@ -38,7 +38,7 @@
                         <div class="desc" style="text-align: center">
 
                                 <h5 style="color: #000000"><?=$im->titulo?></h5>
-                                <a href="#" onclick="borrar(<?=$im->id?>)" id="borrar">
+                                <a href="#" onclick="borrar(<?=$im->id?>, '<?=$im->titulo?>')" id="borrar">
                                     <i style="font-size: 40px" class="icon-trash"></i>
                                 </a>
 
@@ -106,7 +106,7 @@
                                             'name' => 'dias',
                                            'class' => 'input-block-level',
                                             'placeholder' => 'Dias de promocion',
-                                            'id' => 'fechaDP',
+                                            'id' => 'fechaDP'.$cont,
                                             'style'      => $estilo
                                         );
                                         $input_submit = array(
@@ -132,6 +132,9 @@
                                                         echo form_label('Descripcion').'<spa class="text-error">'. form_error("descripcion") .'</spa>';
                                                         echo form_input($input_descripcion);
 
+                                                        echo form_label('Dias de promocion').'<spa class="text-error">'. form_error("dias") .'</spa>';
+                                                        echo form_input($input_dias);
+
                                                         echo form_label('Restriccion').'<spa class="text-error">'. form_error("restriccion") .'</spa>';
                                                         echo form_input($input_restriccion);
 
@@ -141,8 +144,6 @@
                                                         echo form_label('Info Extra');
                                                         echo form_input($input_info);
 
-                                                        echo form_label('Dias de promocion').'<spa class="text-error">'. form_error("dias") .'</spa>';
-                                                        echo form_input($input_dias);
                                                         ?>
 
                                                     </div>
@@ -161,10 +162,3 @@
                 </ul>
             </div>
         </section>
-    </div>
-</section>
-
-
-
-
-
