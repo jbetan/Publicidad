@@ -43,13 +43,33 @@ $this->load->view('template/front_end/login');
 <!-- Required javascript files for Slider -->
 <script src="<?= base_url();?>assets/js/jquery.ba-cond.min.js"></script>
 <script src="<?= base_url();?>assets/js/jquery.slitslider.js"></script>
+<script src="<?= base_url();?>assets/js/cliente.js"></script>
+
 <!-- /Required javascript files for Slider -->
 <?=$this->load->view('template/back_end/slider');?>
 
 <!-- /SL Slider -->
 
 
+<script type="text/javascript">
 
+ function getPromocionByDay(){
+        $.ajax({
+            
+            url: "home/ViernesPromo",
+            type: "GET",
+            dataType: "json",
+            error: function(){
+                console.log("Error");
+            },
+            success:function(data){
+            console.log("Exito");   
+            }
+        })
+
+    }
+
+</script>
 
 
 </body>

@@ -7,11 +7,22 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->load->library(array('session'));
+        $this->load->model('home_model');
+        $this->load->database('default');
 
     }
 
 	public function index()
 	{
+        
+        $promo = $this->home_model->getAllpromocion();
+        dbg($promo);
+
+        if($promo){
+            $datos['promo'] = $promo;
+        } 
+        
+
         $datos['dia'] = 'index';
         $datos['token'] = $this->token();
         $datos['titulo'] = 'Inicio';
@@ -27,12 +38,22 @@ class Home extends CI_Controller {
 	}
 
     public function Lunes(){
+
+        $promo = $this->home_model->getPromocionByDay('Lunes');
+        dbg($promo);
+
+        if($promo){
+            $datos['promo'] = $promo;
+        }  
+
         $datos['dia'] = 'lunes';
         $datos['token'] = $this->token();
         $datos['titulo'] = 'Lunes';
         $datos['contenido'] = 'lunes';
         $this->load->view('template/template_main',$datos);
     }
+
+
 
     public function Martes(){
         $datos['dia'] = 'martes';
@@ -59,6 +80,13 @@ class Home extends CI_Controller {
     }
 
     public function Viernes(){
+
+       // $promo = $this->home_model->getPromocionByDay('Viernes');
+        //dbg($promo);
+        //if($promo){
+        //    $datos['promo'] = $promo;
+        //}
+
         $datos['dia'] = 'viernes';
         $datos['token'] = $this->token();
         $datos['titulo'] = 'Viernes';
@@ -66,7 +94,29 @@ class Home extends CI_Controller {
         $this->load->view('template/template_main',$datos);
     }
 
+
+     public function ViernesPromo(){
+
+       print_r("viernes");
+       //$promo = $this->home_model->getPromocionByDay('Viernes');
+                
+       $data["success"] = true;
+       $data["message"] = "Exito al traer los datos";
+       //$data["data"] = $promo;
+        header('Content-type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+
+
     public function Sabado(){
+        $promo = $this->home_model->getPromocionByDay('Sabado');
+        dbg($promo);
+        if($promo){
+            $datos['promo'] = $promo;
+        }
+
+
         $datos['dia'] = 'sabado';
         $datos['token'] = $this->token();
         $datos['titulo'] = 'Sabado';
@@ -75,12 +125,35 @@ class Home extends CI_Controller {
     }
 
     public function Domingo(){
+        $promo = $this->home_model->getPromocionByDay('Domingo');
+        dbg($promo);
+        if($promo){
+            $datos['promo'] = $promo;
+        }
+
         $datos['dia'] = 'domingo';
         $datos['token'] = $this->token();
         $datos['titulo'] = 'Domingo';
         $datos['contenido'] = 'domingo';
         $this->load->view('template/template_main',$datos);
     }
+
+    public function Hoy(){
+        $promo = $this->home_model->getPromocionToday();
+        dbg($promo);
+        if($promo){
+            $datos['promo'] = $promo;
+        }
+
+
+        $datos['dia'] = 'hoy';
+        $datos['token'] = $this->token();
+        $datos['titulo'] = 'Hoy';
+        $datos['contenido'] = 'hoy';
+        $this->load->view('template/template_main',$datos);
+    }
+
+
 
     public function prueba()
     {
@@ -113,6 +186,8 @@ class Home extends CI_Controller {
         $this->session->set_userdata('token',$token);
         return $token;
     }
+
+
 }
 
 /* End of file home.php */

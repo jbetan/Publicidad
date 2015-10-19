@@ -59,7 +59,7 @@ class Cargar_model extends CI_Model {
         foreach($fechas as $fech)
         {
             $dia = $dias[date('N', strtotime($fech))];//Para obtener le dia de la fecha
-            $fechaF=date("Y-d-m",strtotime($fech)); //Fecha formateada pra poder insertarse en MySQL
+            $fechaF=date("Y-m-d",strtotime($fech)); //Fecha formateada pra poder insertarse en MySQL
             //echo $fechaF."<br>";
 
             $dataC = array(
