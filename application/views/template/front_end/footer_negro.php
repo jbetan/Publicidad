@@ -37,7 +37,7 @@
 $this->load->view('template/front_end/login');
 ?>
 
-<script src="<?= base_url();?>assets/js/vendor/jquery-1.9.1.min.js"></script>-->
+<script src="<?= base_url();?>assets/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="<?= base_url();?>assets/js/vendor/bootstrap.min.js"></script>
 <script src="<?= base_url();?>assets/js/main.js"></script>
 <!-- Required javascript files for Slider -->
