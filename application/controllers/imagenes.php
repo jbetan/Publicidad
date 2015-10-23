@@ -2,7 +2,7 @@
 
 class Imagenes extends CI_Controller {
 
-   private $img = array();
+
 
     public function __construct() {
         parent::__construct();
@@ -27,7 +27,9 @@ class Imagenes extends CI_Controller {
            $img = array();
            $datos['img']=$img;
            $datos['nota']='No tienes imagenes en este momento';
+           $datos['css']='display:block;';
        }
+        $datos['css']='display:none;';
         $datos['titulo'] = 'Mis Imagenes';
         $datos['contenido'] = 'imagenes_view';
         $this->load->view('template/template_empresa',$datos);
@@ -36,16 +38,17 @@ class Imagenes extends CI_Controller {
     public function getinfo(){
      $id = $_GET['id'];
      $img = $this->imagen_model->getImagenbyId($id);
-
+     $fechaTotal = $this->imagen_model->getFechaId($id);
+        //dbg($fechaTotal);
        $data["success"] = true;
        $data["message"] = "Exito al traer los datos";
        $data["data"] = array(
            'titulo'      => $img->titulo,
            'descripcion' => $img->descripcion,
-           'restriccion'  => $img->restripcion,
+           'restriccion' => $img->restripcion,
            'ubicacion'   => $img->ubicacion,
            'info_extra'  => $img->infoadicional,
-           'diaspromo'   => 'proximamente',
+           'diaspromo'   => $fechaTotal,
 
         );
         //header('Content-type: application/json; charset=utf-8');

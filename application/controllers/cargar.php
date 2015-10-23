@@ -29,7 +29,7 @@ class Cargar extends CI_Controller {
         $this->form_validation->set_rules('descripcion', 'Descripcion', 'required|min_length[5]|max_length[50]|trim|xss_clean');
         $this->form_validation->set_rules('restriccion', 'Restriccion', 'required|min_length[5]|max_length[50]|trim|xss_clean');
         $this->form_validation->set_rules('ubicacion', 'Ubicacion', 'required|min_length[5]|max_length[50]|trim|xss_clean');
-        $this->form_validation->set_rules('dias', 'Dias', 'required|min_length[5]|max_length[50]|trim|xss_clean');
+        $this->form_validation->set_rules('dias', 'Dias', 'required|min_length[5]|trim|xss_clean');
 
         if($this->form_validation->run() == true)
         {

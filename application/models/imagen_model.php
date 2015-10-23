@@ -22,7 +22,7 @@ class Imagen_model extends CI_Model{
             ->where('us.id', $idUser)
             ->get();
 
-        print_r($query->num_rows);
+
         if ($query->num_rows > 0) {
             foreach ($query->result() as $fila) {
                 $data[] = $fila;
@@ -34,6 +34,7 @@ class Imagen_model extends CI_Model{
         }
     }
         public function getImagenbyId($id){
+
             $query = $this
                 ->db
                 ->select('*')
@@ -42,14 +43,35 @@ class Imagen_model extends CI_Model{
                 ->limit(1)
                 ->get();
 
-
             if ($query ->num_rows == 1){
+
                 return $query->row();
 
             }else{
                return false;
             }
         }
+
+    public function getFechaId($id){
+        $fechaParcial = "";
+        $qry = $this
+            ->db
+            ->select('fecha')
+            ->from('calendario')
+            ->where('idGaleria', $id)
+            ->get();
+        if ($qry->num_rows > 0) {
+            foreach ($qry->result() as $fila) {
+                $fecha[] = $fila;
+                $fechaParcial .=$fila->fecha.", ";
+            }
+        }
+
+        $n = strlen($fechaParcial);
+        $fechaTotal = substr($fechaParcial, 0, $n-2);
+        //console_log($fechaTotal);
+        return $fechaTotal;
+    }
 
         public  function updateImagen($id, $titulo, $desc, $rest, $ubic, $info ='', $fecha='' ){
             $this->db->trans_start();

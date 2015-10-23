@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 
 <head>
@@ -214,3 +215,9 @@ closedir($filehandle); // Fin lectura archivos
 		
 	</body>	
 </html>
+=======
+<h1>Lunes</h1>
+
+
+
+>>>>>>> 8162b893607d8b51956f5cae579159eec1742a5b
