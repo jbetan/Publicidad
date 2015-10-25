@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <html>
 
 <head>
@@ -145,10 +145,11 @@
 	</script>
 
 </head>
-
 <body>
 	<h3> prueba</h3>
+
 	<?php 
+	/*
 $ruta = "http://localhost:8080/publicidad/imagenes"; // Indicar la ruta
 $filehandle = opendir($ruta); // Abrir archivos de la carpeta
 while ($file = readdir($filehandle)) {
@@ -180,13 +181,15 @@ closedir($filehandle); // Fin lectura archivos
         }
     }
     $dirint->close();
-?>*/
-	----------------------
+*/?>
+
+
+	
+                            
 		
-	<a class="gallery-image" rel="gallery" href="imgs/2.jpg" title="titulo imagen"><img src="imgs/2.jpg" alt=""/></a>
-	<a class="gallery-image" rel="gallery" href="imgs/3.jpg" title="titulo imagen"><img src="imgs/3.jpg" alt=""/></a>
-	<a class="gallery-image" rel="gallery" href="imgs/4.jpg" title="titulo imagen"><img src="imgs/4.jpg" alt=""/></a>
-	<a class="gallery-image" rel="gallery" href="imgs/5.jpg" title="titulo imagen"><img src="imgs/5.jpg" alt=""/></a>
+	<a class="gallery-image" rel="gallery" href="<?= base_url();?>uploads/Koala.jpg" title="titulo imagen"><img src="<?= base_url();?>uploads/Koala.jpg" alt=""/></a>
+	<a class="single-image" rel="gallery" href="<?= base_url();?>uploads/Desert.jpg" title="titulo imagen"><img src="<?= base_url();?>uploads/Desert.jpg" alt=""/></a>
+
 	
 	<h2>Iframe</h2>
 	<a class="fancyOther" data-fancybox-type="iframe" href="iframe.html">Abrir Iframe</a>
@@ -215,9 +218,13 @@ closedir($filehandle); // Fin lectura archivos
 		
 	</body>	
 </html>
-=======
-<h1>Lunes</h1>
+
+<!--
+Lo que vamos hacer ya que tenemmos problema la recorrer las imagenes vamos a para los datos de las imagnes coimo lo 
+tengo pusto en controllers/imagnes ya que este la mandan los datos de las imagenes  desde la base de datos
+y necesito que cheques que bibliotecas son necearias ya q las quen no utlicemos las quitemos
 
 
+-->
 
->>>>>>> 8162b893607d8b51956f5cae579159eec1742a5b
+
